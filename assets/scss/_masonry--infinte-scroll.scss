@@ -43,7 +43,7 @@
     width: 1em;
     height: 1em;
     border-radius: 0.5em;
-    background: #555; /* change color here */
+    background: $rojo; /* change color here */
     position: absolute;
     animation-duration: 0.5s;
     animation-timing-function: ease;
@@ -67,6 +67,7 @@
     }
   }
 }
+
 @keyframes reveal {
   from { transform: scale(0.001); }
   to { transform: scale(1); }

@@ -10301,39 +10301,47 @@ $(document).ready(function() {
     });
     var cardInfoUserName = $('<span>').text(elem.user);
     var cardInfoTag = $('<span>').addClass('card__info__tag').text('#' + elem.hashtag);
-    /*modal
+    // modal
         card.click(function() {
-          var modal = $('<div>').addClass('modal open');
-          modal.attr({'id':'modal-'+ pkmnID});
-          var modalContent = $('<div>').addClass('modal-content');
-          var pkmnSprite = $('<img>').attr({
-            'src':'http://pokeapi.co/media/img/'+ pkmnID +'.png',
-            'alt': nombre
+          var modal = $('<div>').addClass('modal open').attr({'id':'modal-'+ elem.id});
+          var modalContent = $('<div>').addClass('modal__content');
+          var modalHeader = $('<div>').addClass('modal__content__header').append('<div class="icons"><span><i class="fa fa-upload" aria-hidden="true"></i></span><span><i class="fa fa-check" aria-hidden="true"></i></span><span><i class="fa fa-ellipsis-h" aria-hidden="true"></i></span></div><button class="btn rojo"><i class="fa fa-thumb-tack" aria-hidden="true"></i> Guardar</button>');
+          var modalTitle = $('<h2>').addClass('modal__content__title').text(elem.title);
+          var modalImg = $('<img>').attr({
+            class: 'modal__content__image',
+            src: 'dist/img/'+ elem.image_url,
+            alt: elem.title,
           });
-          pkmnSprite.addClass('modal-image');
-          modalContent.append(pkmnSprite);
-          var modalH4 = $('<h2>').text(nombre);
-          modalContent.append(modalH4);
-          //var pkmnFlavor = e.flavor_text_entries[1].flavor_text;
-          var modalP = $('<p>').text('descripción de pokémon');
-          modalContent.append(modalP);
-
-          var modalNumber = $('<h1>').addClass('modal-order').text('#' + pkmnID);
-          modalContent.append(modalNumber);
-
-          var modalFooter = $('<div>').addClass('modal-footer');
-          var modalClose = $('<a>').attr({'href':'#!'});
-          modalClose.addClass('amber lighten-1 white-text modal-action modal-close waves-effect waves-green btn-flat');
-          modalClose.text('Close');
-          modalClose.click(function(e) {
-            e.preventDefault();
-            $(this).parent(".modal-footer").parent(".modal").removeClass('open');
+          var modalButtons = $('<div>').addClass('modal__content__buttons').append('<div class="icons"><span><i class="fa fa-upload" aria-hidden="true"></i></span><span><i class="fa fa-check" aria-hidden="true"></i></span><span><i class="fa fa-ellipsis-h" aria-hidden="true"></i></span></div><button class="btn rojo"><i class="fa fa-thumb-tack" aria-hidden="true"></i> Guardar</button>');
+          var modalInfoUser = $('<div>').addClass('modal__content__user');
+          var modalInfoUserImg = $('<img>').attr({
+            src: 'dist/img/user.png',
+            alt: elem.user,
           });
-          modalFooter.append(modalClose);
-          modal.append(modalFooter);
+          var modalInfoUserName = $('<span>').text(elem.user);
+          var modalInfoTag = $('<span>').addClass('modal__content__tag').text('#' + elem.hashtag);
+          var modalInfoButton = $('<button>').addClass('btn').text('Leerlo');
+          var modalDesc = $('<p>').addClass('modal__content__description').text(elem.description);
+          
+          modalInfoUser.append(modalInfoUserImg);
+          modalInfoUser.append(modalInfoUserName);
+          modalInfoUser.append(modalInfoTag);
+          modalInfoUser.append(modalInfoButton);
+
+          modalContent.append(modalHeader);
+          modalContent.append(modalTitle);
+          modalContent.append(modalImg);
+          modalContent.append(modalButtons);
+          modalContent.append(modalInfoUser);
+          modalContent.append(modalDesc);
+
           modal.append(modalContent);
-          card.append(modal);
-      });*/
+          $('body').append(modal);
+
+          modal.click(function() {
+              $(this).remove();
+          });
+      });
 
       cardInfoUser.append(cardInfoUserImg);
       cardInfoUser.append(cardInfoUserName);
