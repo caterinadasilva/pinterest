@@ -13,16 +13,50 @@
 	<link rel="stylesheet" href="dist/css/style.min.css">
 </head>
 <body>
-<menu>
-	<div class="container">
-		<div class="row">
-			
-		</div>
+<menu class="menu--fixed">
+	<div class="menu__logo">
+		<i class="fa fa-pinterest" aria-hidden="true"></i>
+		<span>Inicio</span>
+	</div>
+	<div class="menu__search">
+		<input type="search" placeholder="Buscar">
+		<select name="Pins" id="pin">
+			<option value="1">Todos los pines</option>
+			<option value="2">Populares</option>
+			<option value="3">Feed de inicio</option>
+			<option value="4">Regalos</option>
+			<option value="5">Bodas</option>
+		</select>
+	</div>
+	<div class="menu__user">
+		<a href="#">
+			<img src="dist/img/user.png" alt="Caterina">
+			<span>Caterina</span>
+		</a>
+	</div>
+	<div class="menu__icon">
+		<i class="fa fa-bars" aria-hidden="true"></i>
+	</div>
+	<div class="menu__notificaciones">
+		<i class="fa fa-commenting" aria-hidden="true"></i>
+		<span>9+</span>
 	</div>
 </menu>
-<h1>Infinite Scroll - Loading JSON + Masonry</h1>
 
-<p>Loading photos from the <a href="https://unsplash.com/developers?utm_source=infinite-scroll-demos&utm_medium=referral&utm_campaign=api-credit">Unsplash API</a></p>
+<section class="tags">
+	<a href="#" class="tags__tag1">Dress</a>
+	<a href="#" class="tags__tag2">San Miguel de Allende</a>
+	<a href="#" class="tags__tag3">Friki</a>
+	<a href="#" class="tags__tag4">Invitaciones</a>
+	<a href="#" class="tags__tag5">Photography</a>
+	<a href="#" class="tags__tag6">Photocall</a>	
+	<a href="#" class="tags__tag7">Damas</a>
+	<a href="#" class="tags__tag8">Illumination</a>
+	<a href="#" class="tags__tag9">Ramo</a>
+	<a href="#" class="tags__tag10">Souvenirs</a>
+	<a href="#" class="tags__tag11">Invitación</a>
+	<button class="tags__button"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+</section>
 
 <div class="grid">
   <div class="grid__col-sizer"></div>
@@ -39,7 +73,6 @@
   <p class="infinite-scroll-last">End of content</p>
   <p class="infinite-scroll-error">No more pages to load</p>
 </div>
-
 
 <!-- .photo-item template HTML -->
 <script type="text/html" id="photo-item-template">
