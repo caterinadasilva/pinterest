@@ -1,33 +1,27 @@
-.grid__col-sizer,
-.photo-item {
-  width: 32%;
-}
-
-.grid__gutter-sizer {
-  width: 2%;
-}
-
-.photo-item {
+.grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  &__col-sizer {
+    width: 18%;
+  }
+  &__gutter-sizer {
+    width: 2%;
+  }
+  &__item {
+  width: 18%;
   margin-bottom: 10px;
   float: left;
-}
-
-.photo-item__image {
-  display: block;
-  max-width: 100%;
-}
-
-.photo-item__caption {
-  position: absolute;
-  left: 10px;
-  bottom: 10px;
-  margin: 0;
-}
-
-.photo-item__caption a {
-  color: white;
-  font-size: 0.8em;
-  text-decoration: none;
+    .card__image {
+      display: block;
+      max-width: 100%;
+    }
+    .card__info__user img {
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+    }
+  }
 }
 
 .page-load-status {
@@ -44,27 +38,35 @@
   width: 4em;
   height: 1em;
   margin: 10px auto;
+  &__dot {
+    display: block;
+    width: 1em;
+    height: 1em;
+    border-radius: 0.5em;
+    background: #555; /* change color here */
+    position: absolute;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    &:nth-child(1) {
+      animation-name: reveal;
+      left: 0;
+    }
+    &:nth-child(2) {
+      left: 0;
+      animation-name: slide;
+    }
+    &:nth-child(3) {
+      left: 1.5em;
+      animation-name: slide;
+    }
+    &:nth-child(4) {
+      left: 3em;
+      animation-name: reveal;
+      animation-direction: reverse;
+    }
+  }
 }
-
-.loader-ellips__dot {
-  display: block;
-  width: 1em;
-  height: 1em;
-  border-radius: 0.5em;
-  background: #555; /* change color here */
-  position: absolute;
-  animation-duration: 0.5s;
-  animation-timing-function: ease;
-  animation-iteration-count: infinite;
-}
-
-.loader-ellips__dot:nth-child(1),
-.loader-ellips__dot:nth-child(2) {
-  left: 0;
-}
-.loader-ellips__dot:nth-child(3) { left: 1.5em; }
-.loader-ellips__dot:nth-child(4) { left: 3em; }
-
 @keyframes reveal {
   from { transform: scale(0.001); }
   to { transform: scale(1); }
@@ -72,18 +74,4 @@
 
 @keyframes slide {
   to { transform: translateX(1.5em) }
-}
-
-.loader-ellips__dot:nth-child(1) {
-  animation-name: reveal;
-}
-
-.loader-ellips__dot:nth-child(2),
-.loader-ellips__dot:nth-child(3) {
-  animation-name: slide;
-}
-
-.loader-ellips__dot:nth-child(4) {
-  animation-name: reveal;
-  animation-direction: reverse;
 }

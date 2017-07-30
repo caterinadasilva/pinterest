@@ -38,6 +38,7 @@ El proyecto fue realizado con las siguientes dependencias NPM:
   - jQuery `~v.3.2.1`
   - Masonry `~v.4.2.0`
   - Infinite Scroll `~v.3.0.0`
+  - Images Loaded `~v.4.1.3`
 
 ### Levantamiento ambiente de desarrollo
 
