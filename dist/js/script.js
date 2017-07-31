@@ -10284,21 +10284,26 @@ var datos = [{"id":1,"title":"Fuke zisukje bu dibas sik.","description":"Jusola 
 
 var datosA = datos.slice(0, 20);
 var datosB = datos.slice(21,40);
-
+var contador = 0;
 
 $(document).ready(function() {
   datosA.forEach(function(elem) {
     cardPrint(elem);
+    contador++;
+    console.log(contador);
+    return false;
   });
 
   $(window).scroll(function() {
     if($(window).scrollTop() == $(document).height() - $(window).height()) {
-      datosB.forEach(function(elem) {
-        cardPrint(elem);
-      });
-
-  // get Masonry instance
-  var msnry = $grid.data('masonry');
+      if (contador == 20) {
+        datosB.forEach(function(elem) {
+          cardPrint(elem);
+          contador++;
+          console.log(contador);
+          return false;
+        });
+      }
     }
   });
 });

@@ -2,21 +2,26 @@ var datos = [{"id":1,"title":"Fuke zisukje bu dibas sik.","description":"Jusola 
 
 var datosA = datos.slice(0, 20);
 var datosB = datos.slice(21,40);
-
+var contador = 0;
 
 $(document).ready(function() {
   datosA.forEach(function(elem) {
     cardPrint(elem);
+    contador++;
+    console.log(contador);
+    return false;
   });
 
   $(window).scroll(function() {
     if($(window).scrollTop() == $(document).height() - $(window).height()) {
-      datosB.forEach(function(elem) {
-        cardPrint(elem);
-      });
-
-  // get Masonry instance
-  var msnry = $grid.data('masonry');
+      if (contador == 20) {
+        datosB.forEach(function(elem) {
+          cardPrint(elem);
+          contador++;
+          console.log(contador);
+          return false;
+        });
+      }
     }
   });
 });
@@ -33,11 +38,7 @@ function cardPrint(elem) {
   var cardInfoTitle = $('<h3>').addClass('card__info__title').text(elem.title);
   var cardInfoDesc = $('<p>').addClass('card__info__desc').text(elem.description);
   var cardInfoUser = $('<div>').addClass('card__info__user');
-  var cardInfoUserImg = $('<img>').attr({
-    src: 'dist/img/user.png',
-    alt: elem.user,
-  });
-
+  var cardInfoUserImg = $('<img>').attr({src: 'dist/img/user.png', alt: elem.user});
   var cardInfoUserName = $('<span>').text(elem.user);
   var cardInfoTag = $('<span>').addClass('card__info__tag').text('#' + elem.hashtag);
     
@@ -47,17 +48,10 @@ function cardPrint(elem) {
       var modalContent = $('<div>').addClass('modal__content');
       var modalHeader = $('<div>').addClass('modal__content__header').append('<div class="icons"><span><i class="fa fa-upload" aria-hidden="true"></i></span><span><i class="fa fa-check" aria-hidden="true"></i></span><span><i class="fa fa-ellipsis-h" aria-hidden="true"></i></span></div><button class="btn rojo"><i class="fa fa-thumb-tack" aria-hidden="true"></i> Guardar</button>');
       var modalTitle = $('<h2>').addClass('modal__content__title').text(elem.title);
-      var modalImg = $('<img>').attr({
-        class: 'modal__content__image',
-        src: 'dist/img/'+ elem.image_url,
-        alt: elem.title,
-      });
+      var modalImg = $('<img>').attr({class: 'modal__content__image', src: 'dist/img/'+ elem.image_url, alt: elem.title});
       var modalButtons = $('<div>').addClass('modal__content__buttons').append('<div class="icons"><span><i class="fa fa-upload" aria-hidden="true"></i></span><span><i class="fa fa-check" aria-hidden="true"></i></span><span><i class="fa fa-ellipsis-h" aria-hidden="true"></i></span></div><button class="btn rojo"><i class="fa fa-thumb-tack" aria-hidden="true"></i> Guardar</button>');
       var modalInfoUser = $('<div>').addClass('modal__content__user');
-      var modalInfoUserImg = $('<img>').attr({
-        src: 'dist/img/user.png',
-        alt: elem.user,
-      });
+      var modalInfoUserImg = $('<img>').attr({src: 'dist/img/user.png', alt: elem.user});
       var modalInfoUserName = $('<span>').text(elem.user);
       var modalInfoTag = $('<span>').addClass('modal__content__tag').text('#' + elem.hashtag);
       var modalInfoButton = $('<button>').addClass('btn').text('Leerlo');
