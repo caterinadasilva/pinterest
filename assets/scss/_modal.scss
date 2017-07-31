@@ -6,14 +6,13 @@
     width: 100%;
     background-color: rgba(0,0,0,.5);
     &__content {
-	    width: 50%;
-	    min-width: 600px;
+	    width: 30%;
+	    max-width: 600px;
 	    margin: 2em auto;
 	    background-color: #fff;
-	    padding: 1em;
-	    border-radius: $border-radius;
-	    box-sizing: border-box;
-    	max-height: 90vh;
+	    padding: 1em 2em;
+	    border-radius: 15px;
+	    max-height: 90vh;
 	    &__header,
 	    &__buttons {
 		    width: 100%;
@@ -21,24 +20,52 @@
 		    justify-content: space-between;
 		    flex-direction: row;
 		    align-items: center;
+		    .icons {
+		    	span {
+		    		color: $gris;
+		    		font-size: 1.5rem;
+		    		margin-right: 1em;
+		    	}
+		    }
+		}
+		&__title {
+			margin: .5em 0;
 		}
 		&__image {
 		    width: auto;
 		    max-height: 60vh;
 		    display: block;
-		    margin: 0 auto;
+		    margin: 0 auto 1em;
 		    border-top-left-radius: $border-radius;
 		    border-top-right-radius: $border-radius;
 		}
 		&__user {
 		    display: flex;
-		    justify-content: center;
+		    justify-content: flex-start;
 		    align-items: center;
 		    flex-direction: row;
+		    position: relative;
+		    margin: 1em 0 0;
 		    img {
 		    	width: 40px;
 		    	height: 40px;
+		    	border-radius: 50%;
 		    }
+		    span {
+		    	font-size: .8rem;
+		    }
+		    img,
+		    span {
+		    	margin-right: .5em;
+		    }
+		    .btn {
+		    	position: absolute;
+		    	right: 0;
+		    }
+		}
+		&__description {
+			padding-bottom: 2em;
+			margin-bottom: 0;
 		}
 	}
 }

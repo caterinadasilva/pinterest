@@ -28,11 +28,7 @@ $(document).ready(function() {
 
 function cardPrint(elem) {
   var card = $('<div>').addClass('grid__item card');
-  var cardImg = $('<img>').attr({
-    class: 'card__image',
-    src: 'dist/img/'+ elem.image_url,
-    alt: elem.title,
-  });
+  var cardImg = $('<img>').attr({class: 'card__image', src: 'dist/img/'+ elem.image_url, alt: elem.title});
 
   var cardInfoBox = $('<div>').addClass('card__info');
   var cardInfoTitle = $('<h3>').addClass('card__info__title').text(elem.title);
@@ -79,10 +75,10 @@ function cardPrint(elem) {
 
   cardInfoUser.append(cardInfoUserImg);
   cardInfoUser.append(cardInfoUserName);
+  cardInfoUser.append(cardInfoTag);
   cardInfoBox.append(cardInfoTitle);
   cardInfoBox.append(cardInfoDesc);
   cardInfoBox.append(cardInfoUser);
-  cardInfoBox.append(cardInfoTag);
   card.append(cardImg);
   card.append(cardInfoBox);
   card.appendTo('.grid');

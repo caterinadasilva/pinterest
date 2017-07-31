@@ -9,6 +9,7 @@
     display: inline-block;
     width: 100%;
     margin-bottom: 2em;
+    cursor: pointer;
     &__image {
       width: 100%;
       height: auto;
@@ -33,10 +34,16 @@
           width: 20px;
           border-radius: 50%;
         }
+        span {
+          font-size: .8em;
+        }
         img,
         span {
           margin-right: .5em;
         }
+      }
+      &__tag {
+        font-size: .8em;
       }
     }
   }

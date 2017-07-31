@@ -10310,21 +10310,13 @@ $(document).ready(function() {
 
 function cardPrint(elem) {
   var card = $('<div>').addClass('grid__item card');
-  var cardImg = $('<img>').attr({
-    class: 'card__image',
-    src: 'dist/img/'+ elem.image_url,
-    alt: elem.title,
-  });
+  var cardImg = $('<img>').attr({class: 'card__image', src: 'dist/img/'+ elem.image_url, alt: elem.title});
 
   var cardInfoBox = $('<div>').addClass('card__info');
   var cardInfoTitle = $('<h3>').addClass('card__info__title').text(elem.title);
   var cardInfoDesc = $('<p>').addClass('card__info__desc').text(elem.description);
   var cardInfoUser = $('<div>').addClass('card__info__user');
-  var cardInfoUserImg = $('<img>').attr({
-    src: 'dist/img/user.png',
-    alt: elem.user,
-  });
-
+  var cardInfoUserImg = $('<img>').attr({src: 'dist/img/user.png', alt: elem.user});
   var cardInfoUserName = $('<span>').text(elem.user);
   var cardInfoTag = $('<span>').addClass('card__info__tag').text('#' + elem.hashtag);
     
@@ -10334,17 +10326,10 @@ function cardPrint(elem) {
       var modalContent = $('<div>').addClass('modal__content');
       var modalHeader = $('<div>').addClass('modal__content__header').append('<div class="icons"><span><i class="fa fa-upload" aria-hidden="true"></i></span><span><i class="fa fa-check" aria-hidden="true"></i></span><span><i class="fa fa-ellipsis-h" aria-hidden="true"></i></span></div><button class="btn rojo"><i class="fa fa-thumb-tack" aria-hidden="true"></i> Guardar</button>');
       var modalTitle = $('<h2>').addClass('modal__content__title').text(elem.title);
-      var modalImg = $('<img>').attr({
-        class: 'modal__content__image',
-        src: 'dist/img/'+ elem.image_url,
-        alt: elem.title,
-      });
+      var modalImg = $('<img>').attr({class: 'modal__content__image', src: 'dist/img/'+ elem.image_url, alt: elem.title});
       var modalButtons = $('<div>').addClass('modal__content__buttons').append('<div class="icons"><span><i class="fa fa-upload" aria-hidden="true"></i></span><span><i class="fa fa-check" aria-hidden="true"></i></span><span><i class="fa fa-ellipsis-h" aria-hidden="true"></i></span></div><button class="btn rojo"><i class="fa fa-thumb-tack" aria-hidden="true"></i> Guardar</button>');
       var modalInfoUser = $('<div>').addClass('modal__content__user');
-      var modalInfoUserImg = $('<img>').attr({
-        src: 'dist/img/user.png',
-        alt: elem.user,
-      });
+      var modalInfoUserImg = $('<img>').attr({src: 'dist/img/user.png', alt: elem.user});
       var modalInfoUserName = $('<span>').text(elem.user);
       var modalInfoTag = $('<span>').addClass('modal__content__tag').text('#' + elem.hashtag);
       var modalInfoButton = $('<button>').addClass('btn').text('Leerlo');
@@ -10372,10 +10357,10 @@ function cardPrint(elem) {
 
   cardInfoUser.append(cardInfoUserImg);
   cardInfoUser.append(cardInfoUserName);
+  cardInfoUser.append(cardInfoTag);
   cardInfoBox.append(cardInfoTitle);
   cardInfoBox.append(cardInfoDesc);
   cardInfoBox.append(cardInfoUser);
-  cardInfoBox.append(cardInfoTag);
   card.append(cardImg);
   card.append(cardInfoBox);
   card.appendTo('.grid');

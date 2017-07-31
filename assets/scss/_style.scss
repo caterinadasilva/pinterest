@@ -197,3 +197,16 @@ body {
     background-image: url("../img/11.jpg");
   }
 }
+.btn {
+  border: none;
+  border-radius: $border-radius/3;
+  padding: .5em .75em;
+  font-weight: 700;
+  color: $gris;
+  background-color: $gris-claro;
+}
+.btn.rojo {
+  @extend .btn;
+  color: $blanco;
+  background-color: $rojo;
+}
